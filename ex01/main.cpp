@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 11:30:47 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/07/29 14:27:57 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/07/29 14:30:56 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,18 @@ int	main(void)
 		std::vector<int> test = {1, 2, 4, 7, 12};
 
 		sp.addNumbers(test.begin(), test.end());
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+	}
+
+
+	{
+		Span sp = Span(10000);
+
+		std::vector<int> vec;
+        for (size_t i = 0; i < 10000; i++)
+            vec.push_back(i);
+		sp.addNumbers(vec.begin(), vec.end());
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
 	}
