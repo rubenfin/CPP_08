@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 11:30:10 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/07/29 14:08:19 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/07/29 14:22:43 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,5 @@ unsigned int Span::longestSpan()
         throw std::logic_error("Not enough numbers to find a span, need a minimum of 2");
     auto lowest = std::min_element(vec.begin(), vec.end());
     auto highest = std::max_element(vec.begin(), vec.end());
-    return ((*highest) - (*lowest));
+    return (static_cast<unsigned int>((*highest) - (*lowest)));
 }
