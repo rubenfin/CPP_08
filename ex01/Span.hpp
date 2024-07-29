@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 11:30:22 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/07/29 12:18:23 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/07/29 14:07:58 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
     ~Span();
 
     void addNumber(int num);
+    void addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end);
     unsigned int shortestSpan();
     unsigned int longestSpan();
 };
