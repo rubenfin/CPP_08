@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 14:34:47 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/08/08 11:44:29 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/08/08 13:33:28 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int main()
 	--it;
 	while (it != ite)
 	{
-	std::cout << *it << std::endl;
-	++it;
+		std::cout << *it << std::endl;
+		++it;
 	}
-// std::stack<int> s(mstack);
-return 0;
+	// std::stack<int> s(mstack);
+	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 14:35:35 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/08/08 11:52:14 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/08/12 11:42:30 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,24 @@
 #include "MutantStack.hpp"
 
 template <typename T>
-MutantStack<T>::MutantStack() : m_Data(nullptr)
+MutantStack<T>::MutantStack() 
 {
-	std::cout << "Created mstack" << std::endl;
+}
+
+template <typename T>
+MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T>& other)
+{
+	if (this != &other)
+	{
+		this->stck = other.stck;
+	}
+	return (*this);
+}
+
+template <typename T>
+MutantStack<T>::MutantStack(const MutantStack<T>& other)
+{
+	this->stck = other.stck;
 }
 
 template <typename T>

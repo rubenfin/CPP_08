@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 14:35:06 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/08/08 11:51:14 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/08/12 11:42:35 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,17 @@ private:
 
 
 template<typename T> 
-class MutantStack : public std::stack<T>
+class MutantStack : public heritage
 {
 public:
     using ValueType = T;
     using iterator = StackIterator<T>;
 private:
-    T* m_Data;
     std::stack<T> stck;
 public:
     MutantStack();
+    MutantStack& operator=(const MutantStack& other);
+    MutantStack(const MutantStack& other);
     ~MutantStack();
 
     void push(const T& n);
