@@ -29,6 +29,17 @@ int main(void)
     if (vecIt != vec.end())
         std::cout << "Found number at position in vector: " << *vecIt << std::endl;
     else 
-        std::cout << "Didn't find your number in the array" << std::endl;
+        std::cout << "Didn't find your number in the vector" << std::endl;
+
+    
+    std::set<int> set = {10, 9, 8, 7, 6, 5};
+
+    auto setIt = easyfind(set, 12345);
+
+    if (setIt != set.end())
+        std::cout << "Found number at position in set: " << *setIt << std::endl;
+    else 
+        std::cout << "Didn't find your number in the set" << std::endl;
+
     return (0);
 }
