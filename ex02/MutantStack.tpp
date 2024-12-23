@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 14:35:35 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/08/12 11:42:30 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/12/20 15:24:22 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T>& other)
 {
 	if (this != &other)
 	{
-		this->stck = other.stck;
+		this->c = other.c;
 	}
 	return (*this);
 }
@@ -32,7 +32,7 @@ MutantStack<T>& MutantStack<T>::operator=(const MutantStack<T>& other)
 template <typename T>
 MutantStack<T>::MutantStack(const MutantStack<T>& other)
 {
-	this->stck = other.stck;
+	*this = other;
 }
 
 template <typename T>
@@ -43,33 +43,35 @@ MutantStack<T>::~MutantStack()
 template <typename T>
 void MutantStack<T>::push(const T &n)
 {
-	this->stck.push(n);
+	std::cout << "pushing " << n << " onto the stack" << std::endl; 
+	std::stack<T, std::deque<T>>::push(n);
 }
 
 template <typename T> T &MutantStack<T>::top(void)
 {
-	return (this->stck.top());
+	return (std::stack<T, std::deque<T>>::top());
 }
 
 template <typename T>
 void MutantStack<T>::pop(void)
 {
-	this->stck.pop();
+	std::stack<T, std::deque<T>>::pop();
 }
 
 template <typename T>
 unsigned int MutantStack<T>::size(void)
 {
-	return (this->stck.size());
+	return (std::stack<T, std::deque<T>>::size());
 }
 
-template <typename T> 
+template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
-	return (iterator(&this->top() - this->size() + 1));
+    return this->c.begin();
 }
+
 template <typename T>
 typename MutantStack<T>::iterator MutantStack<T>::end()
 {
-	return (iterator(&this->top() + 1)); 
+    return this->c.end();
 }
