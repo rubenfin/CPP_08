@@ -43,7 +43,6 @@ MutantStack<T>::~MutantStack()
 template <typename T>
 void MutantStack<T>::push(const T &n)
 {
-	std::cout << "pushing " << n << " onto the stack" << std::endl; 
 	std::stack<T, std::deque<T>>::push(n);
 }
 
