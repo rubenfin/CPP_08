@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 11:30:22 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/07/29 14:07:58 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/12/19 11:18:51 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@
 class Span
 {
 private:
-    unsigned int N;
-    std::vector<int> vec;
+    unsigned int _N;
+    std::vector<int> _vec;
 public:
     Span(unsigned int N);
+    Span(const Span& other);
+    Span &operator=(const Span& other);
     ~Span();
 
     void addNumber(int num);

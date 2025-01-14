@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 11:30:47 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/07/29 14:30:56 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/12/30 12:31:31 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 int	main(void)
 {
-	{
+	try{
 		Span sp = Span(5);
-		sp.addNumber(6);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
-		sp.addNumber(11);
+		sp.addNumber(0);
+		sp.addNumber(2147383647);
         std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+	} catch(const std::exception& e)
+	{
+		std::cerr << "Exception: " << e.what() << '\n';
 	}
 
+	try
 	{
 		Span sp = Span(5);
 
@@ -33,18 +34,25 @@ int	main(void)
 		sp.addNumbers(test.begin(), test.end());
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+	} catch(const std::exception& e)
+	{
+		std::cerr << "Exception: " << e.what() << '\n';
 	}
 
-
+	try
 	{
 		Span sp = Span(10000);
 
 		std::vector<int> vec;
+		vec.reserve(10000);
         for (size_t i = 0; i < 10000; i++)
-            vec.push_back(i);
+            vec.emplace_back(i);
 		sp.addNumbers(vec.begin(), vec.end());
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
+	} catch(const std::exception& e)
+	{
+		std::cerr << "Exception: " << e.what() << '\n';
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/28 15:20:33 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/07/29 13:40:18 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/12/30 11:53:15 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,8 @@
 
 template<typename T>
 typename T::const_iterator easyfind(const T& container, int n)
-{
-    for (typename T::const_iterator it = container.begin(); it != container.end(); ++it)
-    {
-        if (*it == n)
-            return it;
-    }
-    return container.end();
+{ 
+    return (std::find(container.begin(), container.end(), n));
 }
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rfinneru <rfinneru@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/07/29 14:34:47 by rfinneru      #+#    #+#                 */
-/*   Updated: 2024/12/20 15:35:26 by rfinneru      ########   odam.nl         */
+/*   Updated: 2024/12/30 12:19:31 by rfinneru      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main()
         // MutantStack<int>::iterator it = mstack.begin();
         // MutantStack<int>::iterator ite = mstack.end();
         // 
-        // ++it; 
+        // ++it; z
         // --it;
         // while (it != ite) {
             // std::cout << *it << std::endl;
